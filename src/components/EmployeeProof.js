@@ -40,23 +40,27 @@ const EmployeeProof = () => {
   // console.log(proofs);
 
   const filterProof = proofs.filter((proof) => proof.EmployeeId === id);
-  console.log(filterProof);
+  // console.log(filterProof);
 
-  const employmentCat = filterProof.filter(
-    (proof) => proof.category === "Employment Proof"
-  );
-  const incomeCat = filterProof.filter(
-    (proof) => proof.category === "Income Proof"
-  );
-  const employeeCat = filterProof.filter(
-    (proof) => proof.category === "Employee Proof"
-  );
+  // const employmentCat = filterProof.filter(
+  //   (proof) => proof.category === "Employment Proof"
+  // );
+  // const incomeCat = filterProof.filter(
+  //   (proof) => proof.category === "Income Proof"
+  // );
+  // const employeeCat = filterProof.filter(
+  //   (proof) => proof.category === "Employee Proof"
+  // );
 
   return (
     <div className="formArea m-3">
       <header className="d-flex justify-content-between mb-3">
-        <h3>Employee Proof details</h3>
-        <Button variant="outline-primary" onClick={handleShow}>
+        <h3>Application Proof</h3>
+        <Button
+          variant="outline-primary"
+          onClick={handleShow}
+          disabled={"true"}
+        >
           Add Proof
         </Button>
       </header>
@@ -71,39 +75,7 @@ const EmployeeProof = () => {
       <Form className=" border border-dark p-3 rounded w-75 mx-auto">
         <div className="emp-proof">
           <ol>
-            {employmentCat.map((proof) => {
-              return (
-                <li className="proofs  my-2" key={proof._id}>
-                  <div className="det d-flex justify-content-between ">
-                    <p>{proof.documentName}</p> <p>{proof.category}</p>
-                    <div className="btns ">
-                      <Button className="mx-2">+</Button>
-                      <Button onClick={() => handleDelete(proof._id)}>-</Button>
-                    </div>
-                  </div>
-                </li>
-              );
-            })}
-          </ol>
-          <hr />
-          <ol>
-            {incomeCat.map((proof) => {
-              return (
-                <li className="proofs  my-2" key={proof._id}>
-                  <div className="det d-flex justify-content-between ">
-                    <p>{proof.documentName}</p> <p>{proof.category}</p>
-                    <div className="btns ">
-                      <Button className="mx-2">+</Button>
-                      <Button onClick={() => handleDelete(proof._id)}>-</Button>
-                    </div>
-                  </div>
-                </li>
-              );
-            })}
-          </ol>
-          <hr />
-          <ol>
-            {employeeCat.map((proof) => {
+            {filterProof.map((proof) => {
               return (
                 <li className="proofs  my-2" key={proof._id}>
                   <div className="det d-flex justify-content-between ">

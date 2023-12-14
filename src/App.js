@@ -5,16 +5,18 @@ import { Toaster } from "react-hot-toast";
 
 import Home from "./Home";
 import EmployeeProof from "./components/EmployeeProof";
+import EmployeeInfo from "./components/EmployeeInfo";
 function App() {
   return (
     <div className="App">
-      <Router>
+      {/* <Router>
         <Toaster />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/EmployeeProofs/:id" element={<EmployeeProof />} />
         </Routes>
-      </Router>
+      </Router> */}
+      <EmployeeInfo />
     </div>
   );
 }
